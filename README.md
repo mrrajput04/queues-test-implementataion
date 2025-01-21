@@ -1,2 +1,2 @@
 # queues-test-implementataion
-implmented the bullmq message queue for sending the dummy emails
+implemented the bullmq message queue service for sending the dummy emails
