@@ -1,17 +1,19 @@
 import express, {NextFunction, Request, Response} from "express"
 import { Queue } from "bullmq"
 import { addUserToCourseQuery } from "./utils/course";
+import dotenv from "dotenv"
+dotenv.config();
 
 
 const app = express();
-const PORT = process.env.PORT ?? 7000;
+const PORT = process.env.APP_PORT ?? 7000;
 
 const emailQueue = new Queue('email_queue',{
     connection:{
-        host: "caching-13110609-rajpootdivesh5-d40b.l.aivencloud.com",
-        port: 14879,
-        username: "default",
-        password: "AVNS_OxtGEGjt9tOvt5555tr",
+        host: process.env.HOST,
+        port: process.env.PORT as unknown as number,
+        username: process.env.USERNAME,
+        password: process.env.PASSWORD,
     }
 })
 
