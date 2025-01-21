@@ -11,7 +11,7 @@ const PORT = process.env.APP_PORT ?? 7000;
 const emailQueue = new Queue('email_queue',{
     connection:{
         host: process.env.HOST,
-        port: process.env.PORT as unknown as number,
+        port: 14879,
         username: process.env.USERNAME,
         password: process.env.PASSWORD,
     }
